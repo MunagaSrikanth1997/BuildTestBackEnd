@@ -40,7 +40,7 @@ jobs:
       uses: actions/upload-artifact@v2
       with:
         name: app-artifact
-        path: target/*.jar
+        path: target/
     - name: list target directory
       run: |
         ls -l target/
