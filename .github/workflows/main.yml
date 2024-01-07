@@ -50,9 +50,9 @@ jobs:
         aws s3 cp target/BuildTest-0.0.1-SNAPSHOT.jar s3://mycoderepo/SpringBootDev/ --debug
 
     - name: Trigger Terraform Workflow
-      uses: peter-evans/repository-dispatch@v2
+      uses: peter-evans/repository-dispatch@v2.1.2
       with:
         token: ${{ secrets.GH_TOKEN }}
-        repository: https://github.com/MunagaSrikanth1997/synergechInfra
+        repository: MunagaSrikanth1997/synergechInfra
         event-type: deploy
 
