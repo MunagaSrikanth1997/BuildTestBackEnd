@@ -26,6 +26,10 @@ jobs:
       run: |
         sudo apt-get update
         sudo apt-get install -y awscli
+        
+    - name: Display AWS CLI Configuration
+      run: aws configure list
+      
 
     - name: Publish Artifact
       uses: actions/upload-artifact@v2
