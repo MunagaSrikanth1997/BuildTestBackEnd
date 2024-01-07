@@ -25,7 +25,25 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
+<dependency>
+        <groupId>com.amazonaws</groupId>
+        <artifactId>aws-lambda-java-core</artifactId>
+        <version>1.2.1</version> <!-- Use the latest version available -->
+    </dependency>
 
+    <!-- AWS Lambda Java Events -->
+    <dependency>
+        <groupId>com.amazonaws</groupId>
+        <artifactId>aws-lambda-java-events</artifactId>
+        <version>3.10.0</version> <!-- Use the latest version available -->
+    </dependency>
+
+    <!-- AWS Serverless Java Container for Spring Boot -->
+    <dependency>
+        <groupId>com.amazonaws.serverless</groupId>
+        <artifactId>aws-serverless-java-container-spring</artifactId>
+        <version>1.2</version> <!-- Use the latest version available -->
+    </dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-devtools</artifactId>
@@ -37,6 +55,8 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+		
+
 	</dependencies>
 
 	<build>

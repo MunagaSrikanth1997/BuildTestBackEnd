@@ -1,13 +1,17 @@
 package com.example.BuildTest;
-
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
+
+
 
 @SpringBootApplication
-public class BuildTestApplication {
+public class BuildTestApplication extends SpringBootServletInitializer {
 
 	public static void main(String[] args) {
 		SpringApplication.run(BuildTestApplication.class, args);
 	}
+	
+	
 
 }
