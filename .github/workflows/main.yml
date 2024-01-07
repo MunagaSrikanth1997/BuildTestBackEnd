@@ -27,11 +27,6 @@ jobs:
         sudo apt-get update
         sudo apt-get install -y awscli
 
-    - name: configure aws cli
-      run: |
-        aws configure set aws_access_key_id ${{ secrets.AWS_ACCESS_KEY_ID }}
-        aws configure set aws_secret_access_key ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-
     - name: Publish Artifact
       uses: actions/upload-artifact@v2
       with:
@@ -40,7 +35,5 @@ jobs:
 
     - name: Upload to S3
       run: |
-        aws configure set aws_access_key_id ${{ secrets.AWS_ACCESS_KEY_ID }}
-        aws configure set aws_secret_access_key ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-        aws s3 cp target/. s3://mycoderepo/SpringBootDev/ --recursive --debug
+        aws s3 cp target/*.jar s3://mycoderepo/SpringBootDev/ --recursive --debug
 
