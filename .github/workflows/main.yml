@@ -21,9 +21,6 @@ jobs:
 
     - name: Build with Maven
       run: mvn clean install
-    - name: Unset JAVA_HOME
-      run: |
-        unset JAVA_HOME
 
     - name: Install AWS CLI
       run: |
@@ -43,5 +40,7 @@ jobs:
 
     - name: Upload to S3
       run: |
-        aws s3 cp target/*.jar s3://mycoderepo/SpringBootDev/
+        aws configure set aws_access_key_id ${{ secrets.AWS_ACCESS_KEY_ID }}
+        aws configure set aws_secret_access_key ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        aws s3 cp target/. s3://mycoderepo/SpringBootDev/ --recursive --debug
 
