@@ -47,5 +47,5 @@ jobs:
 
     - name: Upload to S3
       run: |
-        aws s3 cp target/*.jar s3://mycoderepo/SpringBootDev/ --recursive --debug
+        aws s3 cp app-artifact/target/*.jar s3://mycoderepo/SpringBootDev/ --recursive --debug
 
