@@ -26,6 +26,12 @@ jobs:
       run: |
         sudo apt-get update
         sudo apt-get install -y awscli
+
+    - name: configure aws cli
+      run: |
+        aws configure set aws_access_key_id ${{ secrets.AWS_ACCESS_KEY_ID }}
+        aws configure set aws_secret_access_key ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        
     - name: Publish Artifact
       uses: actions/upload-artifact@v2
       with:
